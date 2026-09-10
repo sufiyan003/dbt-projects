@@ -1,0 +1,22 @@
+version: 2
+
+models:
+  - name: stg_customers
+    description: "Cleaned customer data from raw source, one row per customer."
+    columns:
+      - name: customer_id
+        description: "Unique identifier for each customer."
+        tests:
+          - unique
+          - not_null
+      - name: email
+        description: "Customer's email address."
+        tests:
+          - not_null
+      - name: country_code
+        description: "Two-letter country code, must exist in country_codes seed."
+        tests:
+          - relationships:
+              arguments:
+                to: ref('country_codes')
+                field: country_code
