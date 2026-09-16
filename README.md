@@ -7,8 +7,8 @@ A collection of dbt (data build tool) projects built while learning analytics en
 | Project | Description | Status |
 |---|---|---|
 | [project-1-beginner](./project-1-beginner) | Customer & orders analytics — staging, marts, incremental models, testing, and documentation | ✅ Complete |
-| project-2-sales-analytics | Sales Analytics Data Warehouse with multiple sources, intermediate models, and Power BI integration | ✅ Complete |
-| project-3-portfolio | Production-style project with Python + API/CSV ingestion, Snowflake, star schema, incremental models, and Airflow orchestration | ✅ Complete |
+| [project-2-sales-analytics](./project-2-sales-analytics) | Sales Analytics Data Warehouse with multiple sources, intermediate models, and Power BI integration | ✅ Complete |
+| [project-3-portfolio](./project-3-portfolio) | Production-style project with Python + API/CSV ingestion, Snowflake, star schema, incremental models, and Airflow orchestration | ✅ Complete |
 
 ## Tech Stack
 
