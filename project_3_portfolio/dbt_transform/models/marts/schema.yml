@@ -1,0 +1,48 @@
+version: 2
+
+models:
+  - name: dim_products
+    description: "Product dimension with price tier classification."
+    columns:
+      - name: product_id
+        description: "Unique identifier for each product."
+        tests:
+          - unique
+          - not_null
+      - name: price_tier
+        description: "Budget, Mid-range, or Premium classification based on price."
+        tests:
+          - accepted_values:
+              arguments:
+                values: ['Budget', 'Mid-range', 'Premium']
+
+  - name: dim_users
+    description: "User dimension with combined full name."
+    columns:
+      - name: user_id
+        description: "Unique identifier for each user."
+        tests:
+          - unique
+          - not_null
+      - name: email
+        description: "User's email address."
+        tests:
+          - not_null
+
+  - name: fct_cart_items
+    description: "Fact table of cart line items, joined with product pricing."
+    columns:
+      - name: product_id
+        description: "References the product in this cart line item."
+        tests:
+          - relationships:
+              arguments:
+                to: ref('dim_products')
+                field: product_id
+      - name: user_id
+        description: "References the user who owns this cart."
+        tests:
+          - relationships:
+              arguments:
+                to: ref('dim_users')
+                field: user_id

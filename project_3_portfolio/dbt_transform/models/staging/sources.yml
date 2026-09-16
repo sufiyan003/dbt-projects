@@ -1,0 +1,10 @@
+version: 2
+
+sources:
+  - name: raw
+    database: portfolio_db
+    schema: PUBLIC
+    tables:
+      - name: raw_products
+      - name: raw_users
+      - name: raw_cart_items
